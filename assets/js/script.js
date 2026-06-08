@@ -8,6 +8,9 @@ const typedStrings = window.magedTypedStrings || {
 };
 let typedInstance = null;
 function initTyped(lang) {
+  const typedEl = document.querySelector('#typed-text');
+  if (!typedEl) return;
+  
   if (typedInstance) typedInstance.destroy();
   typedInstance = new Typed('#typed-text', {
     strings: typedStrings[lang],
@@ -57,9 +60,11 @@ function applyLanguage(lang) {
   localStorage.setItem('portfolio-lang', lang);
 }
 
-langBtn.addEventListener('click', () => {
-  applyLanguage(currentLang === 'en' ? 'ar' : 'en');
-});
+if (langBtn) {
+  langBtn.addEventListener('click', () => {
+    applyLanguage(currentLang === 'en' ? 'ar' : 'en');
+  });
+}
 
 // Load saved language
 const savedLang = localStorage.getItem('portfolio-lang');
@@ -68,10 +73,12 @@ if (savedLang && savedLang !== 'en') applyLanguage(savedLang);
 // ===== Mobile Menu =====
 const menuBtn = document.getElementById('menu');
 const header = document.querySelector('header');
-menuBtn.addEventListener('click', () => {
-  menuBtn.classList.toggle('fa-times');
-  header.classList.toggle('open');
-});
+if (menuBtn && header) {
+  menuBtn.addEventListener('click', () => {
+    menuBtn.classList.toggle('fa-times');
+    header.classList.toggle('open');
+  });
+}
 window.addEventListener('scroll', () => {
   menuBtn.classList.remove('fa-times');
   header.classList.remove('open');
@@ -192,11 +199,13 @@ function applyTheme(mode) {
   localStorage.setItem('portfolio-theme', mode);
 }
 
-themeBtn.addEventListener('click', () => {
-  const isLight = document.body.classList.contains('light-mode');
-  applyTheme(isLight ? 'dark' : 'light');
-  if (whooshSound) whooshSound.play().catch(() => {});
-});
+if (themeBtn) {
+  themeBtn.addEventListener('click', () => {
+    const isLight = document.body.classList.contains('light-mode');
+    applyTheme(isLight ? 'dark' : 'light');
+    if (whooshSound) whooshSound.play().catch(() => {});
+  });
+}
 
 // Load saved theme
 const savedTheme = localStorage.getItem('portfolio-theme');
