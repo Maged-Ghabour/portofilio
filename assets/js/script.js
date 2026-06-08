@@ -167,13 +167,15 @@ if (form) {
 }
 
 // ===== Preloader =====
-window.addEventListener('load', () => {
+function hidePreloader() {
   const preloader = document.getElementById('preloader');
-  if (preloader) {
+  if (preloader && preloader.style.display !== 'none') {
     preloader.classList.add('fade-out');
     setTimeout(() => { preloader.style.display = 'none'; }, 600);
   }
-});
+}
+window.addEventListener('load', hidePreloader);
+setTimeout(hidePreloader, 1500); // Fallback in case 'load' is delayed
 
 // ===== Theme Toggle (Dark / Light) =====
 const themeBtn = document.getElementById('theme-toggle');

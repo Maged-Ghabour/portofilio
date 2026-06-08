@@ -9,8 +9,8 @@
 <?php wp_body_open(); ?>
 
 <!-- Audio -->
-<audio id="audio1" src="<?php echo get_template_directory_uri(); ?>/assets/sounds/whoosh.mp3" preload="auto"></audio>
-<audio id="audio4" src="<?php echo get_template_directory_uri(); ?>/assets/sounds/nav.mp3" preload="auto"></audio>
+<audio id="audio1" src="<?php echo get_template_directory_uri(); ?>/assets/sounds/10.%20Whoosh%20Swoosh.mp3" preload="auto"></audio>
+<audio id="audio4" src="<?php echo get_template_directory_uri(); ?>/assets/sounds/Mouse%20Click%2001.mp3" preload="auto"></audio>
 
 <!-- Preloader -->
 <div id="preloader">
