@@ -1,3 +1,14 @@
+// ===== Preloader =====
+function hidePreloader() {
+  const preloader = document.getElementById('preloader');
+  if (preloader && preloader.style.display !== 'none') {
+    preloader.classList.add('fade-out');
+    setTimeout(() => { preloader.style.display = 'none'; }, 600);
+  }
+}
+window.addEventListener('load', hidePreloader);
+setTimeout(hidePreloader, 1500); // Fallback in case 'load' is delayed
+
 // ===== AOS Init =====
 AOS.init({ duration: 800, once: true, offset: 80 });
 
@@ -173,16 +184,6 @@ if (form) {
   });
 }
 
-// ===== Preloader =====
-function hidePreloader() {
-  const preloader = document.getElementById('preloader');
-  if (preloader && preloader.style.display !== 'none') {
-    preloader.classList.add('fade-out');
-    setTimeout(() => { preloader.style.display = 'none'; }, 600);
-  }
-}
-window.addEventListener('load', hidePreloader);
-setTimeout(hidePreloader, 1500); // Fallback in case 'load' is delayed
 
 // ===== Theme Toggle (Dark / Light) =====
 const themeBtn = document.getElementById('theme-toggle');
