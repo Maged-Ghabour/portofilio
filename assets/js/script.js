@@ -280,3 +280,36 @@ if (canvas) {
   drawParticles();
   window.addEventListener('resize', () => { resizeCanvas(); createParticles(); });
 }
+
+// ===== Copy to Clipboard Function =====
+window.magedCopyText = function(btn) {
+  const wrapper = btn.closest('.copy-wrapper');
+  if (!wrapper) return;
+  const input = wrapper.querySelector('input');
+  if (!input) return;
+  
+  // Select text and copy
+  input.select();
+  input.setSelectionRange(0, 99999); /* For mobile devices */
+  
+  try {
+    document.execCommand('copy');
+    
+    // Change icon to checkmark temporarily
+    const icon = btn.querySelector('i');
+    if (icon) {
+      const originalClass = icon.className;
+      icon.className = 'fas fa-check';
+      btn.style.background = '#2ecc71';
+      btn.style.color = '#fff';
+      
+      setTimeout(() => {
+        icon.className = originalClass;
+        btn.style.background = '';
+        btn.style.color = '';
+      }, 2000);
+    }
+  } catch(e) {
+    console.error('Failed to copy text', e);
+  }
+};
