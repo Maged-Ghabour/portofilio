@@ -84,6 +84,14 @@ acf_add_local_field_group(array(
         array('key' => 'field_int_state', 'label' => 'State/Province', 'name' => 'maged_payment_int_state', 'type' => 'text'),
         array('key' => 'field_int_country', 'label' => 'Country', 'name' => 'maged_payment_int_country', 'type' => 'text'),
         array('key' => 'field_int_phone', 'label' => 'Phone', 'name' => 'maged_payment_int_phone', 'type' => 'text'),
+        
+        // InstaPay Egypt Tab
+        array('key' => 'field_tab_instapay', 'label' => 'InstaPay Egypt', 'name' => '', 'type' => 'tab'),
+        array('key' => 'field_instapay_acc1', 'label' => 'InstaPay Account 1', 'name' => 'maged_payment_instapay_acc1', 'type' => 'text', 'default_value' => 'magedghabour@instapay'),
+        array('key' => 'field_instapay_link1', 'label' => 'InstaPay Link 1', 'name' => 'maged_payment_instapay_link1', 'type' => 'url'),
+        array('key' => 'field_instapay_acc2', 'label' => 'InstaPay Account 2', 'name' => 'maged_payment_instapay_acc2', 'type' => 'text', 'default_value' => 'megoghabour@instapay'),
+        array('key' => 'field_instapay_link2', 'label' => 'InstaPay Link 2', 'name' => 'maged_payment_instapay_link2', 'type' => 'url'),
+        array('key' => 'field_instapay_phone', 'label' => 'InstaPay Phone Number', 'name' => 'maged_payment_instapay_phone', 'type' => 'text', 'default_value' => '01284867755'),
 	),
 	'location' => array(
 		array(

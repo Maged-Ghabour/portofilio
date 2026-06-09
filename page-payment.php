@@ -44,6 +44,12 @@ get_header();
   $int_state    = get_payment_data('maged_payment_int_state', 'Kafr El-Sheikh Governorate');
   $int_country  = get_payment_data('maged_payment_int_country', 'Egypt');
   $int_phone    = get_payment_data('maged_payment_int_phone', '+20 100 224 1591');
+
+  $instapay_acc1  = get_payment_data('maged_payment_instapay_acc1', 'magedghabour@instapay');
+  $instapay_link1 = get_payment_data('maged_payment_instapay_link1', '');
+  $instapay_acc2  = get_payment_data('maged_payment_instapay_acc2', 'megoghabour@instapay');
+  $instapay_link2 = get_payment_data('maged_payment_instapay_link2', '');
+  $instapay_phone = get_payment_data('maged_payment_instapay_phone', '01284867755');
 ?>
 <section class="payment" id="payment">
   <h1 class="heading" data-aos="fade-up">
@@ -240,6 +246,67 @@ get_header();
         <div class="payment-info-item">
           <span data-en="Branch Address:" data-ar="عنوان الفرع:">Branch Address:</span>
           <span class="payment-plain-text"><?php echo esc_html($rajhi_address); ?></span>
+        </div>
+        <?php endif; ?>
+
+      </div>
+    </div>
+    <?php endif; ?>
+
+    <!-- InstaPay Egypt -->
+    <?php if($instapay_acc1 || $instapay_acc2 || $instapay_phone) : ?>
+    <div class="payment-card">
+      <div class="payment-card-header">
+        <i class="fas fa-bolt"></i>
+        <h3 data-en="InstaPay Egypt" data-ar="انستا باي مصر">InstaPay Egypt</h3>
+      </div>
+      <div class="payment-card-body">
+        
+        <?php if($instapay_acc1) : ?>
+        <div class="payment-info-item">
+          <span data-en="Account 1:" data-ar="الحساب الأول:">Account 1:</span>
+          <div class="copy-wrapper">
+            <input type="text" value="<?php echo esc_attr($instapay_acc1); ?>" readonly>
+            <button type="button" class="copy-btn" onclick="magedCopyText(this)"><i class="fas fa-copy"></i></button>
+          </div>
+        </div>
+        <?php if($instapay_link1) : ?>
+        <div class="payment-info-item">
+          <span data-en="Pay Link 1:" data-ar="رابط الدفع 1:">Pay Link 1:</span>
+          <div class="copy-wrapper">
+            <input type="text" value="<?php echo esc_attr($instapay_link1); ?>" readonly>
+            <button type="button" class="copy-btn" onclick="magedCopyText(this)"><i class="fas fa-copy"></i></button>
+          </div>
+        </div>
+        <?php endif; ?>
+        <?php endif; ?>
+
+        <?php if($instapay_acc2) : ?>
+        <div class="payment-info-item">
+          <span data-en="Account 2:" data-ar="الحساب الثاني:">Account 2:</span>
+          <div class="copy-wrapper">
+            <input type="text" value="<?php echo esc_attr($instapay_acc2); ?>" readonly>
+            <button type="button" class="copy-btn" onclick="magedCopyText(this)"><i class="fas fa-copy"></i></button>
+          </div>
+        </div>
+        <?php if($instapay_link2) : ?>
+        <div class="payment-info-item">
+          <span data-en="Pay Link 2:" data-ar="رابط الدفع 2:">Pay Link 2:</span>
+          <div class="copy-wrapper">
+            <input type="text" value="<?php echo esc_attr($instapay_link2); ?>" readonly>
+            <button type="button" class="copy-btn" onclick="magedCopyText(this)"><i class="fas fa-copy"></i></button>
+          </div>
+        </div>
+        <?php endif; ?>
+        <?php endif; ?>
+
+        <?php if($instapay_phone) : ?>
+        <div class="payment-info-item">
+          <span data-en="Phone Number:" data-ar="رقم الجوال:">Phone Number:</span>
+          <div class="copy-wrapper">
+            <input type="text" value="<?php echo esc_attr($instapay_phone); ?>" readonly>
+            <button type="button" class="copy-btn" onclick="magedCopyText(this)"><i class="fas fa-copy"></i></button>
+          </div>
         </div>
         <?php endif; ?>
 
