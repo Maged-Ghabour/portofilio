@@ -45,14 +45,16 @@
   </div>
   <nav class="navbar">
     <ul>
-      <li><a href="#home" class="active"><i class="fas fa-home"></i> <span data-en="Home" data-ar="الرئيسية">Home</span></a></li>
-      <li><a href="#about"><i class="fas fa-user"></i> <span data-en="About" data-ar="نبذة عني">About</span></a></li>
-      <li><a href="#skills"><i class="fas fa-code"></i> <span data-en="Skills" data-ar="مهاراتي">Skills</span></a></li>
-      <li><a href="#services"><i class="fas fa-cogs"></i> <span data-en="Services" data-ar="خدماتي">Services</span></a></li>
-      <li><a href="#projects"><i class="fas fa-briefcase"></i> <span data-en="Projects" data-ar="مشاريعي">Projects</span></a></li>
-      <li><a href="#experience"><i class="fas fa-building"></i> <span data-en="Experience" data-ar="الخبرات المهنية">Experience</span></a></li>
-      <li><a href="#education"><i class="fas fa-graduation-cap"></i> <span data-en="Education" data-ar="المؤهلات العلمية">Education</span></a></li>
-      <li><a href="#contact"><i class="fas fa-envelope"></i> <span data-en="Contact" data-ar="تواصل معي">Contact</span></a></li>
+      <?php $home_link = is_front_page() ? '' : esc_url(home_url('/')); ?>
+      <li><a href="<?php echo $home_link; ?>#home" class="active"><i class="fas fa-home"></i> <span data-en="Home" data-ar="الرئيسية">Home</span></a></li>
+      <li><a href="<?php echo $home_link; ?>#about"><i class="fas fa-user"></i> <span data-en="About" data-ar="نبذة عني">About</span></a></li>
+      <li><a href="<?php echo $home_link; ?>#skills"><i class="fas fa-code"></i> <span data-en="Skills" data-ar="مهاراتي">Skills</span></a></li>
+      <li><a href="<?php echo $home_link; ?>#services"><i class="fas fa-cogs"></i> <span data-en="Services" data-ar="خدماتي">Services</span></a></li>
+      <li><a href="<?php echo $home_link; ?>#projects"><i class="fas fa-briefcase"></i> <span data-en="Projects" data-ar="مشاريعي">Projects</span></a></li>
+      <li><a href="<?php echo $home_link; ?>#experience"><i class="fas fa-building"></i> <span data-en="Experience" data-ar="الخبرات المهنية">Experience</span></a></li>
+      <li><a href="<?php echo $home_link; ?>#education"><i class="fas fa-graduation-cap"></i> <span data-en="Education" data-ar="المؤهلات العلمية">Education</span></a></li>
+      <li><a href="<?php echo $home_link; ?>#contact"><i class="fas fa-envelope"></i> <span data-en="Contact" data-ar="تواصل معي">Contact</span></a></li>
+      <li><a href="<?php echo esc_url(home_url('/payment/')); ?>"><i class="fas fa-wallet"></i> <span data-en="Payment" data-ar="طرق الدفع">Payment</span></a></li>
     </ul>
   </nav>
   <div class="header-btns">
