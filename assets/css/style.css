@@ -99,7 +99,7 @@ body.rtl header .navbar ul li a:hover, body.rtl header .navbar ul li a.active { 
 body.rtl #menu { right: auto; left: 2rem; }
 
 /* ===== HOME ===== */
-.home { display: flex; align-items: center; justify-content: space-between; gap: 4rem; padding-top: 0; position: relative; overflow: hidden; }
+section.home { display: flex; align-items: center; justify-content: space-between; gap: 4rem; padding-top: 0; position: relative; overflow: hidden; }
 .home-content { flex: 1; position: relative; z-index: 1; }
 .home-content h3 { font-size: 2rem; color: var(--yellow); margin-bottom: 1rem; }
 .home-content h1 { font-size: 5rem; color: #fff; font-weight: 900; line-height: 1.2; margin-bottom: 1rem; }
@@ -323,7 +323,7 @@ body.rtl .timeline-content:hover { transform: translateX(-5px); }
   header.open { left: 0; }
   body.rtl header.open { right: 0; left: auto; }
   #menu { display: flex; align-items: center; justify-content: center; }
-  .home { flex-direction: column; text-align: center; padding-top: 8rem; }
+  section.home { flex-direction: column; text-align: center; padding-top: 8rem; }
   .home-btns { justify-content: center; }
   .home-img { order: -1; }
   .home-img img { max-width: 28rem; height: 32rem; }
