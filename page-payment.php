@@ -21,15 +21,18 @@ get_header();
   $pay_sub_en   = get_payment_data('maged_payment_subtitle_en', 'Choose the suitable payment method and copy details easily.');
   $pay_sub_ar   = get_payment_data('maged_payment_subtitle_ar', 'اختر طريقة الدفع المناسبة لك وانسخ البيانات بسهولة.');
 
+  $paypal_currency = get_payment_data('maged_payment_paypal_currency', 'USD');
   $paypal_link  = get_payment_data('maged_payment_paypal_link', 'https://paypal.me/elwaaa');
   $paypal_email = get_payment_data('maged_payment_paypal_email', '3lwaaa+5@gmail.com');
 
+  $stc_currency = get_payment_data('maged_payment_stc_currency', 'SAR');
   $stc_name     = get_payment_data('maged_payment_stc_name', 'Ali Ahmed Abd elrazek Ahmed');
   $stc_iban     = get_payment_data('maged_payment_stc_iban', 'EG070002023102310333000113743');
   $stc_bank     = get_payment_data('maged_payment_stc_bank', 'Banque Misr');
   $stc_account  = get_payment_data('maged_payment_stc_account', '2310333000113743');
   $stc_purpose  = get_payment_data('maged_payment_stc_purpose', 'Family Support/Living Expenses');
 
+  $rajhi_currency = get_payment_data('maged_payment_rajhi_currency', 'SAR');
   $rajhi_first  = get_payment_data('maged_payment_rajhi_firstname', 'على');
   $rajhi_last   = get_payment_data('maged_payment_rajhi_lastname', 'احمد عبدالرازق احمد');
   $rajhi_iban   = get_payment_data('maged_payment_rajhi_iban', 'EG070002023102310333000113743');
@@ -40,16 +43,35 @@ get_header();
   $rajhi_address= get_payment_data('maged_payment_rajhi_address', 'مزلقان الانشاء والتعمير, Kafr El-Sheikh');
   $rajhi_postal = get_payment_data('maged_payment_rajhi_postal', '33513');
 
+  $int_currency = get_payment_data('maged_payment_int_currency', 'USD');
   $int_city     = get_payment_data('maged_payment_int_city', 'Kafr El-Sheikh');
   $int_state    = get_payment_data('maged_payment_int_state', 'Kafr El-Sheikh Governorate');
   $int_country  = get_payment_data('maged_payment_int_country', 'Egypt');
   $int_phone    = get_payment_data('maged_payment_int_phone', '+20 100 224 1591');
 
+  $instapay_currency = get_payment_data('maged_payment_instapay_currency', 'EGP');
   $instapay_acc1  = get_payment_data('maged_payment_instapay_acc1', 'magedghabour@instapay');
   $instapay_link1 = get_payment_data('maged_payment_instapay_link1', '');
   $instapay_acc2  = get_payment_data('maged_payment_instapay_acc2', 'megoghabour@instapay');
   $instapay_link2 = get_payment_data('maged_payment_instapay_link2', '');
   $instapay_phone = get_payment_data('maged_payment_instapay_phone', '01284867755');
+
+  $vf_barq_currency = get_payment_data('maged_payment_vf_barq_currency', 'EGP');
+  $vf_barq_name   = get_payment_data('maged_payment_vf_barq_name', 'Ali Ahmed Abd elrazek Ahmed');
+  $vf_barq_phone1 = get_payment_data('maged_payment_vf_barq_phone1', '01002241591');
+  $vf_barq_img    = get_payment_data('maged_payment_vf_barq_img', '');
+  $vf_barq_phone2 = get_payment_data('maged_payment_vf_barq_phone2', '01002241591');
+
+
+  $notes_title_en = get_payment_data('maged_payment_notes_title_en', 'Important Notes');
+  $notes_title_ar = get_payment_data('maged_payment_notes_title_ar', 'ملاحظات هامة');
+  $notes_1_en     = get_payment_data('maged_payment_notes_1_en', 'After completing the transfer, please send a screenshot of the receipt via WhatsApp to confirm the payment.');
+  $notes_1_ar     = get_payment_data('maged_payment_notes_1_ar', 'بعد إتمام عملية التحويل، يرجى إرسال لقطة شاشة (Screenshot) للإيصال عبر الواتساب لتأكيد الدفع.');
+  $notes_2_en     = get_payment_data('maged_payment_notes_2_en', 'International transfers take from 2 to 4 working days to appear in the account.');
+  $notes_2_ar     = get_payment_data('maged_payment_notes_2_ar', 'تستغرق الحوالات الدولية من يومين إلى 4 أيام عمل لتظهر في الحساب.');
+  $notes_btn_en   = get_payment_data('maged_payment_notes_btn_en', 'Send Payment Proof');
+  $notes_btn_ar   = get_payment_data('maged_payment_notes_btn_ar', 'إرسال إثبات الدفع');
+  $notes_wa_link  = get_payment_data('maged_payment_notes_wa_link', 'https://wa.me/201007852746');
 ?>
 <section class="payment" id="payment">
   <h1 class="heading" data-aos="fade-up">
@@ -69,6 +91,7 @@ get_header();
       <div class="payment-card-header">
         <i class="fab fa-paypal"></i>
         <h3 data-en="PayPal Transfer" data-ar="تحويل PayPal">PayPal Transfer</h3>
+        <?php if($paypal_currency): ?><span class="currency-badge currency-<?php echo strtolower($paypal_currency); ?>"><?php echo esc_html($paypal_currency); ?></span><?php endif; ?>
       </div>
       <div class="payment-card-body">
         <?php if($paypal_link) : ?>
@@ -99,6 +122,7 @@ get_header();
       <div class="payment-card-header">
         <i class="fas fa-wallet"></i>
         <h3 data-en="STC Pay (International)" data-ar="STC Pay (حوالة دولية)">STC Pay (International)</h3>
+        <?php if($stc_currency): ?><span class="currency-badge currency-<?php echo strtolower($stc_currency); ?>"><?php echo esc_html($stc_currency); ?></span><?php endif; ?>
       </div>
       <div class="payment-card-body">
         <p class="payment-note" data-en="Via MoneyGram" data-ar="عبر MoneyGram (وليس ويسترن يونيون)">Via MoneyGram</p>
@@ -162,6 +186,7 @@ get_header();
       <div class="payment-card-header">
         <i class="fas fa-university"></i>
         <h3 data-en="Al Rajhi Bank" data-ar="تحويل بنك الراجحي">Al Rajhi Bank</h3>
+        <?php if($rajhi_currency): ?><span class="currency-badge currency-<?php echo strtolower($rajhi_currency); ?>"><?php echo esc_html($rajhi_currency); ?></span><?php endif; ?>
       </div>
       <div class="payment-card-body">
         
@@ -259,6 +284,7 @@ get_header();
       <div class="payment-card-header">
         <i class="fas fa-bolt"></i>
         <h3 data-en="InstaPay Egypt" data-ar="انستا باي مصر">InstaPay Egypt</h3>
+        <?php if($instapay_currency): ?><span class="currency-badge currency-<?php echo strtolower($instapay_currency); ?>"><?php echo esc_html($instapay_currency); ?></span><?php endif; ?>
       </div>
       <div class="payment-card-body">
         
@@ -303,6 +329,62 @@ get_header();
           <span data-en="Phone Number:" data-ar="رقم الجوال:">Phone Number:</span>
           <div class="copy-wrapper">
             <input type="text" value="<?php echo esc_attr($instapay_phone); ?>" readonly>
+            <button type="button" class="copy-btn" onclick="magedCopyText(this)"><i class="fas fa-copy"></i></button>
+          </div>
+        </div>
+        <?php endif; ?>
+
+      </div>
+    </div>
+    <?php endif; ?>
+
+    <!-- Vodafone Cash Barq -->
+    <?php if($vf_barq_phone1 || $vf_barq_phone2) : ?>
+    <div class="payment-card payment-card-barq">
+      <div class="payment-card-header-barq">
+        <h3 data-en="International Transfer via Barq on Vodafone Cash" data-ar="تحويل دولي على المحفظة باستخدام برق على فودافون كاش">تحويل دولي على المحفظة باستخدام برق على فودافون كاش</h3>
+        <?php if($vf_barq_currency): ?><span class="currency-badge currency-<?php echo strtolower($vf_barq_currency); ?>" style="margin-top: 1rem; display: inline-block;"><?php echo esc_html($vf_barq_currency); ?></span><?php endif; ?>
+      </div>
+      <div class="payment-card-body">
+        
+        <div class="barq-subtitle" data-en="Via Barq app to transfer to Meeza Vodafone Cash wallet" data-ar="عبر تطبيق برق لتحويل لمحفظة ميزا فودافون كاش">عبر تطبيق برق لتحويل لمحفظة ميزا فودافون كاش</div>
+
+        <?php if($vf_barq_name) : ?>
+        <div class="payment-info-item">
+          <span data-en="Name:" data-ar="الاسم:">الاسم:</span>
+          <div class="copy-wrapper">
+            <input type="text" value="<?php echo esc_attr($vf_barq_name); ?>" readonly>
+            <button type="button" class="copy-btn" onclick="magedCopyText(this)"><i class="fas fa-copy"></i></button>
+          </div>
+        </div>
+        <?php endif; ?>
+
+        <?php if($vf_barq_phone1) : ?>
+        <div class="payment-info-item">
+          <span data-en="Phone Number:" data-ar="رقم الهاتف:">رقم الهاتف:</span>
+          <div class="copy-wrapper">
+            <input type="text" value="<?php echo esc_attr($vf_barq_phone1); ?>" readonly>
+            <button type="button" class="copy-btn" onclick="magedCopyText(this)"><i class="fas fa-copy"></i></button>
+          </div>
+        </div>
+        <?php endif; ?>
+
+        <?php if($vf_barq_img) : ?>
+        <div class="payment-info-item">
+          <a href="<?php echo esc_url($vf_barq_img); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block" style="text-align: center; border-radius: .5rem; padding: 1.2rem; font-size: 1.4rem; display: block; width: 100%;">
+            <span data-en="Illustrative Image" data-ar="صورة توضيحية">صورة توضيحية</span>
+          </a>
+        </div>
+        <?php endif; ?>
+
+        <?php if($vf_barq_phone2) : ?>
+        <hr class="barq-divider">
+        <div class="barq-subtitle" data-en="Or transfer from inside Egypt directly" data-ar="او التحويل من داخل مصر مباشرة">او التحويل من داخل مصر مباشرة</div>
+
+        <div class="payment-info-item">
+          <span data-en="Phone Number:" data-ar="رقم الهاتف:">رقم الهاتف:</span>
+          <div class="copy-wrapper">
+            <input type="text" value="<?php echo esc_attr($vf_barq_phone2); ?>" readonly>
             <button type="button" class="copy-btn" onclick="magedCopyText(this)"><i class="fas fa-copy"></i></button>
           </div>
         </div>
@@ -367,6 +449,42 @@ get_header();
     <?php endif; ?>
 
   </div>
+
+  <!-- Important Notes -->
+  <div class="payment-notes-card" data-aos="fade-up">
+    <h3 class="notes-title" data-en="<?php echo esc_attr($notes_title_en); ?>" data-ar="<?php echo esc_attr($notes_title_ar); ?>">
+      <?php echo esc_html($notes_title_en); ?>
+    </h3>
+    <div class="notes-content">
+      <div class="notes-action">
+        <a href="<?php echo esc_url($notes_wa_link); ?>" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-glow">
+          <i class="fab fa-whatsapp"></i>
+          <span data-en="<?php echo esc_attr($notes_btn_en); ?>" data-ar="<?php echo esc_attr($notes_btn_ar); ?>">
+            <?php echo esc_html($notes_btn_en); ?>
+          </span>
+        </a>
+      </div>
+      <ul class="notes-list">
+        <?php if($notes_1_en || $notes_1_ar) : ?>
+        <li>
+          <i class="fas fa-check-circle"></i>
+          <span data-en="<?php echo esc_attr($notes_1_en); ?>" data-ar="<?php echo esc_attr($notes_1_ar); ?>">
+            <?php echo esc_html($notes_1_en); ?>
+          </span>
+        </li>
+        <?php endif; ?>
+        <?php if($notes_2_en || $notes_2_ar) : ?>
+        <li>
+          <i class="far fa-clock"></i>
+          <span data-en="<?php echo esc_attr($notes_2_en); ?>" data-ar="<?php echo esc_attr($notes_2_ar); ?>">
+            <?php echo esc_html($notes_2_en); ?>
+          </span>
+        </li>
+        <?php endif; ?>
+      </ul>
+    </div>
+  </div>
+
 </section>
 
 <?php get_footer(); ?>
