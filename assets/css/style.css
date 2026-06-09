@@ -21,7 +21,7 @@ html::-webkit-scrollbar { width: 0.6rem; }
 html::-webkit-scrollbar-track { background: var(--bg); }
 html::-webkit-scrollbar-thumb { background: var(--yellow); border-radius: 1rem; }
 
-body { background: var(--bg); color: var(--text); overflow-x: hidden; padding-left: var(--header-w); font-family: 'Nunito', sans-serif; }
+body { display: block !important; background: var(--bg); color: var(--text); overflow-x: hidden; padding-left: var(--header-w); font-family: 'Nunito', sans-serif; }
 body.rtl { padding-left: 0; padding-right: var(--header-w); font-family: 'Cairo', sans-serif; direction: rtl; }
 
 /* ===== BUTTONS ===== */
@@ -36,7 +36,7 @@ body.rtl { padding-left: 0; padding-right: var(--header-w); font-family: 'Cairo'
 .heading .white { color: #fff; }
 .heading::after { content: ''; display: block; width: 6rem; height: .3rem; background: var(--yellow); margin: 1rem auto 0; border-radius: 1rem; }
 
-section { min-height: 100vh; padding: 6rem 4rem; }
+section { display: block; width: 100%; min-height: 100vh; padding: 6rem 4rem; overflow: hidden; }
 
 /* ===== HEADER ===== */
 header {
