@@ -129,28 +129,32 @@
     <?php 
       $default_services = [
           [
-              'icon' => 'fas fa-laptop-code',
-              'title_en' => 'Web Development', 'title_ar' => 'تطوير الويب',
-              'desc_en' => 'Building responsive and highly scalable web applications from scratch.',
-              'desc_ar' => 'بناء تطبيقات ويب متجاوبة وقابلة للتوسع من الصفر بجودة عالية.'
-          ],
-          [
-              'icon' => 'fas fa-server',
-              'title_en' => 'Backend Solutions', 'title_ar' => 'برمجة الواجهة الخلفية',
-              'desc_en' => 'Creating robust backend systems and databases architecture.',
-              'desc_ar' => 'إنشاء أنظمة واجهة خلفية قوية وهيكلة قواعد بيانات متطورة.'
+              'icon' => 'fas fa-globe',
+              'title_en' => 'Web Development', 
+              'title_ar' => 'تطوير مواقع الويب',
+              'desc_en' => 'Designing and developing modern, responsive websites using PHP, Laravel, HTML, CSS, and JavaScript.',
+              'desc_ar' => 'تصميم وتطوير مواقع ويب حديثة ومتجاوبة باستخدام PHP, Laravel, HTML, CSS و JavaScript.'
           ],
           [
               'icon' => 'fas fa-plug',
-              'title_en' => 'API Integration', 'title_ar' => 'ربط واجهات برمجية API',
-              'desc_en' => 'Seamlessly connecting third-party services and APIs to your platform.',
-              'desc_ar' => 'ربط سلس مع الخدمات الخارجية والواجهات البرمجية المختلفة.'
+              'title_en' => 'API Development', 
+              'title_ar' => 'تطوير واجهات برمجة التطبيقات (API)',
+              'desc_en' => 'Designing and developing secure, efficient RESTful APIs for seamless integration between web and mobile apps.',
+              'desc_ar' => 'تصميم وتطوير واجهات برمجة تطبيقات (RESTful APIs) آمنة وفعالة للربط السلس بين تطبيقات الويب والهواتف الذكية.'
           ],
           [
-              'icon' => 'fas fa-mobile-alt',
-              'title_en' => 'Responsive Design', 'title_ar' => 'تصميم متجاوب',
-              'desc_en' => 'Ensuring your website looks perfectly on all devices and screen sizes.',
-              'desc_ar' => 'ضمان ظهور موقعك بشكل مثالي على جميع الأجهزة والشاشات.'
+              'icon' => 'fab fa-wordpress',
+              'title_en' => 'WordPress Development', 
+              'title_ar' => 'تطوير قوالب وإضافات ووردبريس',
+              'desc_en' => 'Developing and customizing WordPress themes and plugins to meet your business requirements accurately.',
+              'desc_ar' => 'تطوير وتخصيص قوالب وإضافات ووردبريس لتلبي متطلبات عملك بدقة واحترافية.'
+          ],
+          [
+              'icon' => 'fas fa-database',
+              'title_en' => 'Database Design', 
+              'title_ar' => 'تصميم قواعد البيانات',
+              'desc_en' => 'Planning and designing robust, scalable databases using MySQL and MongoDB to ensure optimal performance.',
+              'desc_ar' => 'تخطيط وتصميم قواعد بيانات متينة وقابلة للتوسع باستخدام MySQL و MongoDB لضمان أفضل أداء.'
           ]
       ];
       for ($i = 1; $i <= 4; $i++) : 
@@ -308,25 +312,43 @@
     <?php 
       $default_education = [
           [
-              'date' => '2015 - 2019',
-              'title_en' => 'Bachelor of Computer Science', 'title_ar' => 'بكالوريوس علوم الحاسب',
-              'desc_en' => 'Studied core computer science concepts, algorithms, and software engineering.',
-              'desc_ar' => 'دراسة مفاهيم علوم الحاسب الأساسية، الخوارزميات، وهندسة البرمجيات.'
+              'icon' => 'fas fa-graduation-cap',
+              'date' => '2018',
+              'title_en' => 'Bachelor of Computers and Information', 'title_ar' => 'بكالوريوس حاسبات ومعلومات',
+              'desc_en' => 'Graduated from the Faculty of Computers and Information, Mansoura University.',
+              'desc_ar' => 'تخرجت من كلية الحاسبات والمعلومات، جامعة المنصورة.'
           ],
           [
-              'date' => '2020',
-              'title_en' => 'Advanced PHP Certification', 'title_ar' => 'شهادة متقدمة في PHP',
-              'desc_en' => 'Completed an intensive program focusing on advanced PHP and Laravel concepts.',
-              'desc_ar' => 'إكمال برنامج مكثف يركز على مفاهيم PHP و Laravel المتقدمة.'
-          ],
-          [
+              'icon' => 'fas fa-shield-alt',
               'date' => '2021',
-              'title_en' => 'Frontend Web Development', 'title_ar' => 'تطوير واجهات الويب',
-              'desc_en' => 'Mastered modern frontend frameworks like React and Vue.js.',
-              'desc_ar' => 'إتقان أطر عمل الواجهات الأمامية الحديثة مثل React و Vue.js.'
+              'title_en' => 'Reserve Officer in Armed Forces', 'title_ar' => 'ضابط احتياط بالقوات المسلحة',
+              'desc_en' => 'Acquired skills in network and server administration (CCNA and MCSA) in addition to Front-End development.',
+              'desc_ar' => 'اكتسبت مهارات في إدارة الشبكات والخوادم (CCNA و MCSA) بالإضافة إلى تطوير الواجهات الأمامية (Front-End).'
+          ],
+          [
+              'icon' => 'fas fa-laptop-code',
+              'date' => '2022',
+              'title_en' => 'Web Development Course (PHP, MySQL, Laravel) — NTI', 'title_ar' => 'دورة تطوير الويب (PHP, MySQL, Laravel) — NTI',
+              'desc_en' => 'Designing and building dynamic web applications and relational databases using PHP and Laravel framework.',
+              'desc_ar' => 'تصميم وبناء تطبيقات ويب ديناميكية وقواعد بيانات علائقية باستخدام PHP وإطار العمل Laravel.'
+          ],
+          [
+              'icon' => 'fas fa-code',
+              'date' => '2022',
+              'title_en' => 'Front-end and Server Apps Course (Node.js & Angular) — NTI', 'title_ar' => 'دورة تطوير الواجهات وتطبيقات الخادم (Node.js & Angular) — NTI',
+              'desc_en' => 'Training on developing, securing, and deploying advanced and real-world web applications using Node.js and Angular technologies.',
+              'desc_ar' => 'التدريب على تطوير وتأمين ونشر تطبيقات ويب متقدمة وحقيقية باستخدام تقنيات Node.js و Angular.'
+          ],
+          [
+              'icon' => 'fas fa-rocket',
+              'date' => '2022',
+              'title_en' => 'Full Stack Web Scholarship (PHP & Laravel) — ITI', 'title_ar' => 'منحة تطوير الويب المتكامل (PHP & Laravel) — ITI',
+              'desc_en' => 'Intensive training covering: HTML, CSS, JS, Bootstrap, PHP, Laravel, MySQL, Node.js, Docker, and GitHub.',
+              'desc_ar' => 'تدريب مكثف على تطوير الويب الشامل يغطي تقنيات: HTML, CSS, JS, Bootstrap, PHP, Laravel, MySQL, Node.js, Docker وإدارة النسخ باستخدام GitHub.'
           ]
       ];
-      for ($i = 1; $i <= 3; $i++) : 
+      for ($i = 1; $i <= 5; $i++) : 
+      $icon = get_theme_mod("maged_edu_{$i}_icon", $default_education[$i-1]['icon']);
       $date = get_theme_mod("maged_edu_{$i}_date", $default_education[$i-1]['date']);
       $title_en = get_theme_mod("maged_edu_{$i}_title_en", $default_education[$i-1]['title_en']);
       $title_ar = get_theme_mod("maged_edu_{$i}_title_ar", $default_education[$i-1]['title_ar']);
@@ -335,7 +357,7 @@
       if ($title_en) :
     ?>
     <div class="box" data-aos="fade-up" data-aos-delay="<?php echo ($i-1)*100; ?>">
-      <i class="fas fa-graduation-cap"></i>
+      <i class="<?php echo esc_attr($icon); ?>"></i>
       <span><?php echo esc_html($date); ?></span>
       <h3 data-en="<?php echo esc_attr($title_en); ?>" data-ar="<?php echo esc_attr($title_ar); ?>"><?php echo esc_html($title_en); ?></h3>
       <p data-en="<?php echo esc_attr($desc_en); ?>" data-ar="<?php echo esc_attr($desc_ar); ?>"><?php echo esc_html($desc_en); ?></p>

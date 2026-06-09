@@ -116,7 +116,8 @@ function maged_portfolio_customize_register( $wp_customize ) {
 
     // 8. Education (Loop)
     $wp_customize->add_section( 'maged_education', array('title' => 'Education Section', 'priority' => 37) );
-    for ($i = 1; $i <= 3; $i++) {
+    for ($i = 1; $i <= 5; $i++) {
+        maged_add_text_field($wp_customize, 'maged_education', "maged_edu_{$i}_icon", "Education $i Icon Class");
         maged_add_text_field($wp_customize, 'maged_education', "maged_edu_{$i}_date", "Education $i Date");
         maged_add_text_field($wp_customize, 'maged_education', "maged_edu_{$i}_title_en", "Education $i Title (EN)");
         maged_add_text_field($wp_customize, 'maged_education', "maged_edu_{$i}_title_ar", "Education $i Title (AR)");
