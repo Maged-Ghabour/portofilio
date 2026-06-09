@@ -136,6 +136,40 @@ function maged_portfolio_customize_register( $wp_customize ) {
     maged_add_text_field($wp_customize, 'maged_contact', 'maged_social_linkedin', 'LinkedIn URL', 'https://www.linkedin.com/in/magedghabour/');
     maged_add_text_field($wp_customize, 'maged_contact', 'maged_social_whatsapp', 'WhatsApp URL', 'https://wa.me/201007852746');
     maged_add_text_field($wp_customize, 'maged_contact', 'maged_cf7_shortcode', 'Contact Form 7 Shortcode', '[contact-form-7 id="123" title="Contact form 1"]');
+    // 10. Payment Section
+    $wp_customize->add_section( 'maged_payment', array('title' => 'Payment Section', 'priority' => 39) );
+    maged_add_text_field($wp_customize, 'maged_payment', 'maged_payment_title_en', 'Section Title (EN)', 'Payment Details');
+    maged_add_text_field($wp_customize, 'maged_payment', 'maged_payment_title_ar', 'Section Title (AR)', 'بيانات الدفع');
+    maged_add_textarea_field($wp_customize, 'maged_payment', 'maged_payment_subtitle_en', 'Section Subtitle (EN)', 'Choose the suitable payment method and copy details easily.');
+    maged_add_textarea_field($wp_customize, 'maged_payment', 'maged_payment_subtitle_ar', 'Section Subtitle (AR)', 'اختر طريقة الدفع المناسبة لك وانسخ البيانات بسهولة.');
+    
+    // PayPal
+    maged_add_text_field($wp_customize, 'maged_payment', 'maged_payment_paypal_link', 'PayPal Link', 'https://paypal.me/elwaaa');
+    maged_add_text_field($wp_customize, 'maged_payment', 'maged_payment_paypal_email', 'PayPal Email', '3lwaaa+5@gmail.com');
+    
+    // STC Pay
+    maged_add_text_field($wp_customize, 'maged_payment', 'maged_payment_stc_name', 'STC Pay Name', 'Ali Ahmed Abd elrazek Ahmed');
+    maged_add_text_field($wp_customize, 'maged_payment', 'maged_payment_stc_iban', 'STC Pay IBAN', 'EG070002023102310333000113743');
+    maged_add_text_field($wp_customize, 'maged_payment', 'maged_payment_stc_bank', 'STC Pay Bank Name', 'Banque Misr');
+    maged_add_text_field($wp_customize, 'maged_payment', 'maged_payment_stc_account', 'STC Pay Account Number', '2310333000113743');
+    maged_add_text_field($wp_customize, 'maged_payment', 'maged_payment_stc_purpose', 'STC Pay Purpose', 'Family Support/Living Expenses');
+    
+    // Al Rajhi Bank
+    maged_add_text_field($wp_customize, 'maged_payment', 'maged_payment_rajhi_firstname', 'Rajhi First Name', 'على');
+    maged_add_text_field($wp_customize, 'maged_payment', 'maged_payment_rajhi_lastname', 'Rajhi Last Name', 'احمد عبدالرازق احمد');
+    maged_add_text_field($wp_customize, 'maged_payment', 'maged_payment_rajhi_iban', 'Rajhi IBAN', 'EG070002023102310333000113743');
+    maged_add_text_field($wp_customize, 'maged_payment', 'maged_payment_rajhi_account', 'Rajhi Account Number', '2310333000113743');
+    maged_add_text_field($wp_customize, 'maged_payment', 'maged_payment_rajhi_swift', 'Rajhi SWIFT Code', 'BMISEGCXXXX');
+    maged_add_text_field($wp_customize, 'maged_payment', 'maged_payment_rajhi_bank', 'Rajhi Bank Name', 'Banque Misr');
+    maged_add_text_field($wp_customize, 'maged_payment', 'maged_payment_rajhi_branch', 'Rajhi Branch', '101- All Branches (أو 231 - كفر الشيخ 50)');
+    maged_add_text_field($wp_customize, 'maged_payment', 'maged_payment_rajhi_address', 'Rajhi Branch Address', 'مزلقان الانشاء والتعمير, Kafr El-Sheikh');
+    maged_add_text_field($wp_customize, 'maged_payment', 'maged_payment_rajhi_postal', 'Rajhi Postal Code', '33513');
+    
+    // International Bank
+    maged_add_text_field($wp_customize, 'maged_payment', 'maged_payment_int_city', 'International Bank City', 'Kafr El-Sheikh');
+    maged_add_text_field($wp_customize, 'maged_payment', 'maged_payment_int_state', 'International Bank State', 'Kafr El-Sheikh Governorate');
+    maged_add_text_field($wp_customize, 'maged_payment', 'maged_payment_int_country', 'International Bank Country', 'Egypt');
+    maged_add_text_field($wp_customize, 'maged_payment', 'maged_payment_int_phone', 'International Bank Phone', '+20 100 224 1591');
 
 }
 add_action( 'customize_register', 'maged_portfolio_customize_register' );
