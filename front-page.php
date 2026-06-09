@@ -70,34 +70,55 @@
 
 <!-- SKILLS -->
 <section class="skills" id="skills">
-  <h1 class="heading" data-aos="fade-up"><span data-en="My Skills" data-ar="مهاراتي التقنية">My Skills</span></h1>
+  <h1 class="heading" data-aos="fade-up"><span data-en="My Skills" data-ar="مهاراتي">My Skills</span></h1>
   <div class="skills-container">
     <?php 
       $default_skills = [
-          ['name' => 'PHP / Laravel', 'pct' => '90'],
-          ['name' => 'MySQL / Database', 'pct' => '85'],
-          ['name' => 'HTML & CSS', 'pct' => '95'],
-          ['name' => 'JavaScript / jQuery', 'pct' => '85'],
-          ['name' => 'Vue.js / React', 'pct' => '75'],
-          ['name' => 'WordPress', 'pct' => '80'],
-          ['name' => 'RESTful APIs', 'pct' => '85'],
-          ['name' => 'Git / GitHub', 'pct' => '90'],
+          ['name' => 'PHP', 'pct' => '90'],
+          ['name' => 'Laravel', 'pct' => '85'],
+          ['name' => 'MySQL', 'pct' => '85'],
+          ['name' => 'Node.js', 'pct' => '70'],
+          ['name' => 'HTML / CSS', 'pct' => '95'],
+          ['name' => 'JavaScript', 'pct' => '80'],
+          ['name' => 'Angular', 'pct' => '65'],
+          ['name' => 'Git / GitHub', 'pct' => '80'],
       ];
-      for ($i = 1; $i <= 8; $i++) : 
-      $skill_name = get_theme_mod("maged_skill_{$i}_name", $default_skills[$i-1]['name']);
-      $skill_pct = get_theme_mod("maged_skill_{$i}_pct", $default_skills[$i-1]['pct']);
-      if ($skill_name && $skill_pct) :
     ?>
-    <div class="skill-item" data-aos="fade-up">
-      <div class="skill-info">
-        <span><?php echo esc_html($skill_name); ?></span>
-        <span><?php echo esc_html($skill_pct); ?>%</span>
+    <div class="skill-col">
+      <?php for ($i = 1; $i <= 4; $i++) : 
+        $skill_name = get_theme_mod("maged_skill_{$i}_name", $default_skills[$i-1]['name']);
+        $skill_pct = get_theme_mod("maged_skill_{$i}_pct", $default_skills[$i-1]['pct']);
+        if ($skill_name && $skill_pct) :
+      ?>
+      <div class="skill-item" data-aos="fade-up">
+        <div class="skill-info">
+          <span><?php echo esc_html($skill_name); ?></span>
+          <span><?php echo esc_html($skill_pct); ?>%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" data-width="<?php echo esc_attr($skill_pct); ?>" style="width: 0;"></div>
+        </div>
       </div>
-      <div class="skill-bar">
-        <div class="skill-fill" data-width="<?php echo esc_attr($skill_pct); ?>" style="width: 0;"></div>
-      </div>
+      <?php endif; endfor; ?>
     </div>
-    <?php endif; endfor; ?>
+
+    <div class="skill-col">
+      <?php for ($i = 5; $i <= 8; $i++) : 
+        $skill_name = get_theme_mod("maged_skill_{$i}_name", $default_skills[$i-1]['name']);
+        $skill_pct = get_theme_mod("maged_skill_{$i}_pct", $default_skills[$i-1]['pct']);
+        if ($skill_name && $skill_pct) :
+      ?>
+      <div class="skill-item" data-aos="fade-up">
+        <div class="skill-info">
+          <span><?php echo esc_html($skill_name); ?></span>
+          <span><?php echo esc_html($skill_pct); ?>%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" data-width="<?php echo esc_attr($skill_pct); ?>" style="width: 0;"></div>
+        </div>
+      </div>
+      <?php endif; endfor; ?>
+    </div>
   </div>
 </section>
 
