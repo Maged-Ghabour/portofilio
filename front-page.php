@@ -72,9 +72,20 @@
 <section class="skills" id="skills">
   <h1 class="heading" data-aos="fade-up"><span data-en="My Skills" data-ar="مهاراتي التقنية">My Skills</span></h1>
   <div class="skills-container">
-    <?php for ($i = 1; $i <= 8; $i++) : 
-      $skill_name = get_theme_mod("maged_skill_{$i}_name", '');
-      $skill_pct = get_theme_mod("maged_skill_{$i}_pct", '');
+    <?php 
+      $default_skills = [
+          ['name' => 'PHP / Laravel', 'pct' => '90'],
+          ['name' => 'MySQL / Database', 'pct' => '85'],
+          ['name' => 'HTML & CSS', 'pct' => '95'],
+          ['name' => 'JavaScript / jQuery', 'pct' => '85'],
+          ['name' => 'Vue.js / React', 'pct' => '75'],
+          ['name' => 'WordPress', 'pct' => '80'],
+          ['name' => 'RESTful APIs', 'pct' => '85'],
+          ['name' => 'Git / GitHub', 'pct' => '90'],
+      ];
+      for ($i = 1; $i <= 8; $i++) : 
+      $skill_name = get_theme_mod("maged_skill_{$i}_name", $default_skills[$i-1]['name']);
+      $skill_pct = get_theme_mod("maged_skill_{$i}_pct", $default_skills[$i-1]['pct']);
       if ($skill_name && $skill_pct) :
     ?>
     <div class="skill-item" data-aos="fade-up">
@@ -94,12 +105,39 @@
 <section class="services" id="services">
   <h1 class="heading" data-aos="fade-up"><span data-en="My Services" data-ar="خدماتي">My Services</span></h1>
   <div class="services-container">
-    <?php for ($i = 1; $i <= 4; $i++) : 
-      $icon = get_theme_mod("maged_service_{$i}_icon", '');
-      $title_en = get_theme_mod("maged_service_{$i}_title_en", '');
-      $title_ar = get_theme_mod("maged_service_{$i}_title_ar", '');
-      $desc_en = get_theme_mod("maged_service_{$i}_desc_en", '');
-      $desc_ar = get_theme_mod("maged_service_{$i}_desc_ar", '');
+    <?php 
+      $default_services = [
+          [
+              'icon' => 'fas fa-laptop-code',
+              'title_en' => 'Web Development', 'title_ar' => 'تطوير الويب',
+              'desc_en' => 'Building responsive and highly scalable web applications from scratch.',
+              'desc_ar' => 'بناء تطبيقات ويب متجاوبة وقابلة للتوسع من الصفر بجودة عالية.'
+          ],
+          [
+              'icon' => 'fas fa-server',
+              'title_en' => 'Backend Solutions', 'title_ar' => 'برمجة الواجهة الخلفية',
+              'desc_en' => 'Creating robust backend systems and databases architecture.',
+              'desc_ar' => 'إنشاء أنظمة واجهة خلفية قوية وهيكلة قواعد بيانات متطورة.'
+          ],
+          [
+              'icon' => 'fas fa-plug',
+              'title_en' => 'API Integration', 'title_ar' => 'ربط واجهات برمجية API',
+              'desc_en' => 'Seamlessly connecting third-party services and APIs to your platform.',
+              'desc_ar' => 'ربط سلس مع الخدمات الخارجية والواجهات البرمجية المختلفة.'
+          ],
+          [
+              'icon' => 'fas fa-mobile-alt',
+              'title_en' => 'Responsive Design', 'title_ar' => 'تصميم متجاوب',
+              'desc_en' => 'Ensuring your website looks perfectly on all devices and screen sizes.',
+              'desc_ar' => 'ضمان ظهور موقعك بشكل مثالي على جميع الأجهزة والشاشات.'
+          ]
+      ];
+      for ($i = 1; $i <= 4; $i++) : 
+      $icon = get_theme_mod("maged_service_{$i}_icon", $default_services[$i-1]['icon']);
+      $title_en = get_theme_mod("maged_service_{$i}_title_en", $default_services[$i-1]['title_en']);
+      $title_ar = get_theme_mod("maged_service_{$i}_title_ar", $default_services[$i-1]['title_ar']);
+      $desc_en = get_theme_mod("maged_service_{$i}_desc_en", $default_services[$i-1]['desc_en']);
+      $desc_ar = get_theme_mod("maged_service_{$i}_desc_ar", $default_services[$i-1]['desc_ar']);
       if ($title_en) :
     ?>
     <div class="service-card" data-aos="zoom-in" data-aos-delay="<?php echo ($i-1)*100; ?>">
@@ -115,13 +153,58 @@
 <section class="projects" id="projects">
   <h1 class="heading" data-aos="fade-up"><span data-en="My Projects" data-ar="أبرز مشاريعي">My Projects</span></h1>
   <div class="projects-container">
-    <?php for ($i = 1; $i <= 6; $i++) : 
-      $img = get_theme_mod("maged_project_{$i}_img", '');
-      $title_en = get_theme_mod("maged_project_{$i}_title_en", '');
-      $title_ar = get_theme_mod("maged_project_{$i}_title_ar", '');
-      $desc_en = get_theme_mod("maged_project_{$i}_desc_en", '');
-      $desc_ar = get_theme_mod("maged_project_{$i}_desc_ar", '');
-      $link = get_theme_mod("maged_project_{$i}_link", '#');
+    <?php 
+      $default_projects = [
+          [
+              'img' => get_template_directory_uri() . '/assets/img/wallpaperflare.com_wallpaper.jpg',
+              'title_en' => 'E-Commerce Platform', 'title_ar' => 'منصة تجارة إلكترونية',
+              'desc_en' => 'A fully featured e-commerce website with payment gateways.',
+              'desc_ar' => 'موقع تجارة إلكترونية متكامل يحتوي على بوابات دفع.',
+              'link' => '#'
+          ],
+          [
+              'img' => get_template_directory_uri() . '/assets/img/wallpaperflare.com_wallpaper (1).jpg',
+              'title_en' => 'Real Estate Portal', 'title_ar' => 'بوابة عقارية',
+              'desc_en' => 'Advanced search functionality for properties and agencies.',
+              'desc_ar' => 'وظيفة بحث متقدمة للعقارات والوكالات العقارية.',
+              'link' => '#'
+          ],
+          [
+              'img' => get_template_directory_uri() . '/assets/img/wallpaperflare.com_wallpaper (2).jpg',
+              'title_en' => 'Learning Management', 'title_ar' => 'نظام إدارة التعليم',
+              'desc_en' => 'Online courses platform with quizzes and video streaming.',
+              'desc_ar' => 'منصة دورات تعليمية على الإنترنت مع اختبارات وبث فيديو.',
+              'link' => '#'
+          ],
+          [
+              'img' => get_template_directory_uri() . '/assets/img/wallpaperflare.com_wallpaper (3).jpg',
+              'title_en' => 'Booking System', 'title_ar' => 'نظام حجوزات',
+              'desc_en' => 'Automated appointment scheduling for clinics and salons.',
+              'desc_ar' => 'جدولة مواعيد تلقائية للعيادات والصالونات.',
+              'link' => '#'
+          ],
+          [
+              'img' => get_template_directory_uri() . '/assets/img/wallpaperflare.com_wallpaper (4).jpg',
+              'title_en' => 'Company Portfolio', 'title_ar' => 'محفظة أعمال لشركة',
+              'desc_en' => 'Sleek and modern portfolio design with dynamic content.',
+              'desc_ar' => 'تصميم حديث وأنيق لمحفظة أعمال مع محتوى ديناميكي.',
+              'link' => '#'
+          ],
+          [
+              'img' => get_template_directory_uri() . '/assets/img/wallpaperflare.com_wallpaper (5).jpg',
+              'title_en' => 'SaaS Application', 'title_ar' => 'تطبيق SaaS',
+              'desc_en' => 'Cloud-based software solution with multi-tenant architecture.',
+              'desc_ar' => 'حل برمجي سحابي يدعم مستخدمين وشركات متعددة.',
+              'link' => '#'
+          ],
+      ];
+      for ($i = 1; $i <= 6; $i++) : 
+      $img = get_theme_mod("maged_project_{$i}_img", $default_projects[$i-1]['img']);
+      $title_en = get_theme_mod("maged_project_{$i}_title_en", $default_projects[$i-1]['title_en']);
+      $title_ar = get_theme_mod("maged_project_{$i}_title_ar", $default_projects[$i-1]['title_ar']);
+      $desc_en = get_theme_mod("maged_project_{$i}_desc_en", $default_projects[$i-1]['desc_en']);
+      $desc_ar = get_theme_mod("maged_project_{$i}_desc_ar", $default_projects[$i-1]['desc_ar']);
+      $link = get_theme_mod("maged_project_{$i}_link", $default_projects[$i-1]['link']);
       if ($title_en && $img) :
     ?>
     <div class="project-card" data-aos="fade-up" data-aos-delay="<?php echo ($i-1)*100; ?>">
@@ -144,14 +227,38 @@
 <section class="experience" id="experience">
   <h1 class="heading" data-aos="fade-up"><span data-en="Work Experience" data-ar="الخبرات المهنية">Work Experience</span></h1>
   <div class="timeline">
-    <?php for ($i = 1; $i <= 3; $i++) : 
-      $date_en = get_theme_mod("maged_exp_{$i}_date_en", '');
-      $date_ar = get_theme_mod("maged_exp_{$i}_date_ar", '');
-      $title_en = get_theme_mod("maged_exp_{$i}_title_en", '');
-      $title_ar = get_theme_mod("maged_exp_{$i}_title_ar", '');
-      $desc_en = get_theme_mod("maged_exp_{$i}_desc_en", '');
-      $desc_ar = get_theme_mod("maged_exp_{$i}_desc_ar", '');
-      $tags = get_theme_mod("maged_exp_{$i}_tags", '');
+    <?php 
+      $default_experience = [
+          [
+              'date_en' => '2022 - Present', 'date_ar' => '2022 - حتى الآن',
+              'title_en' => 'Senior Backend Developer', 'title_ar' => 'مطور واجهة خلفية أول',
+              'desc_en' => 'Leading the backend team in developing scalable APIs and microservices.',
+              'desc_ar' => 'قيادة فريق الواجهة الخلفية في تطوير واجهات برمجية قابلة للتوسع.',
+              'tags' => 'PHP, Laravel, MySQL, Redis'
+          ],
+          [
+              'date_en' => '2020 - 2022', 'date_ar' => '2020 - 2022',
+              'title_en' => 'Full Stack Developer', 'title_ar' => 'مطور ويب متكامل',
+              'desc_en' => 'Developed and maintained various e-commerce and corporate websites.',
+              'desc_ar' => 'تطوير وصيانة العديد من مواقع التجارة الإلكترونية والمواقع للشركات.',
+              'tags' => 'Vue.js, HTML, CSS, JavaScript'
+          ],
+          [
+              'date_en' => '2019 - 2020', 'date_ar' => '2019 - 2020',
+              'title_en' => 'Junior Web Developer', 'title_ar' => 'مطور ويب مبتدئ',
+              'desc_en' => 'Assisted in building custom WordPress themes and plugins.',
+              'desc_ar' => 'المساعدة في بناء قوالب وإضافات ووردبريس مخصصة.',
+              'tags' => 'WordPress, PHP, jQuery'
+          ]
+      ];
+      for ($i = 1; $i <= 3; $i++) : 
+      $date_en = get_theme_mod("maged_exp_{$i}_date_en", $default_experience[$i-1]['date_en']);
+      $date_ar = get_theme_mod("maged_exp_{$i}_date_ar", $default_experience[$i-1]['date_ar']);
+      $title_en = get_theme_mod("maged_exp_{$i}_title_en", $default_experience[$i-1]['title_en']);
+      $title_ar = get_theme_mod("maged_exp_{$i}_title_ar", $default_experience[$i-1]['title_ar']);
+      $desc_en = get_theme_mod("maged_exp_{$i}_desc_en", $default_experience[$i-1]['desc_en']);
+      $desc_ar = get_theme_mod("maged_exp_{$i}_desc_ar", $default_experience[$i-1]['desc_ar']);
+      $tags = get_theme_mod("maged_exp_{$i}_tags", $default_experience[$i-1]['tags']);
       if ($title_en) :
     ?>
     <div class="timeline-item" data-aos="fade-up" data-aos-delay="<?php echo ($i-1)*100; ?>">
@@ -177,12 +284,33 @@
 <section class="education" id="education">
   <h1 class="heading" data-aos="fade-up"><span data-en="My Education" data-ar="مؤهلاتي العلمية">My Education</span></h1>
   <div class="box-container">
-    <?php for ($i = 1; $i <= 3; $i++) : 
-      $date = get_theme_mod("maged_edu_{$i}_date", '');
-      $title_en = get_theme_mod("maged_edu_{$i}_title_en", '');
-      $title_ar = get_theme_mod("maged_edu_{$i}_title_ar", '');
-      $desc_en = get_theme_mod("maged_edu_{$i}_desc_en", '');
-      $desc_ar = get_theme_mod("maged_edu_{$i}_desc_ar", '');
+    <?php 
+      $default_education = [
+          [
+              'date' => '2015 - 2019',
+              'title_en' => 'Bachelor of Computer Science', 'title_ar' => 'بكالوريوس علوم الحاسب',
+              'desc_en' => 'Studied core computer science concepts, algorithms, and software engineering.',
+              'desc_ar' => 'دراسة مفاهيم علوم الحاسب الأساسية، الخوارزميات، وهندسة البرمجيات.'
+          ],
+          [
+              'date' => '2020',
+              'title_en' => 'Advanced PHP Certification', 'title_ar' => 'شهادة متقدمة في PHP',
+              'desc_en' => 'Completed an intensive program focusing on advanced PHP and Laravel concepts.',
+              'desc_ar' => 'إكمال برنامج مكثف يركز على مفاهيم PHP و Laravel المتقدمة.'
+          ],
+          [
+              'date' => '2021',
+              'title_en' => 'Frontend Web Development', 'title_ar' => 'تطوير واجهات الويب',
+              'desc_en' => 'Mastered modern frontend frameworks like React and Vue.js.',
+              'desc_ar' => 'إتقان أطر عمل الواجهات الأمامية الحديثة مثل React و Vue.js.'
+          ]
+      ];
+      for ($i = 1; $i <= 3; $i++) : 
+      $date = get_theme_mod("maged_edu_{$i}_date", $default_education[$i-1]['date']);
+      $title_en = get_theme_mod("maged_edu_{$i}_title_en", $default_education[$i-1]['title_en']);
+      $title_ar = get_theme_mod("maged_edu_{$i}_title_ar", $default_education[$i-1]['title_ar']);
+      $desc_en = get_theme_mod("maged_edu_{$i}_desc_en", $default_education[$i-1]['desc_en']);
+      $desc_ar = get_theme_mod("maged_edu_{$i}_desc_ar", $default_education[$i-1]['desc_ar']);
       if ($title_en) :
     ?>
     <div class="box" data-aos="fade-up" data-aos-delay="<?php echo ($i-1)*100; ?>">
