@@ -271,12 +271,11 @@ get_header();
           </div>
         </div>
         <?php if($instapay_link1) : ?>
-        <div class="payment-info-item">
-          <span data-en="Pay Link 1:" data-ar="رابط الدفع 1:">Pay Link 1:</span>
-          <div class="copy-wrapper">
-            <input type="text" value="<?php echo esc_attr($instapay_link1); ?>" readonly>
-            <button type="button" class="copy-btn" onclick="magedCopyText(this)"><i class="fas fa-copy"></i></button>
-          </div>
+        <div class="payment-info-item" style="align-items: center;">
+          <span data-en="Direct Pay:" data-ar="الدفع المباشر:">Direct Pay:</span>
+          <a href="<?php echo esc_url($instapay_link1); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 1.2rem; display: inline-flex; align-items: center; gap: 0.5rem;">
+            <i class="fas fa-external-link-alt"></i> <span data-en="Pay Now" data-ar="ادفع الآن">Pay Now</span>
+          </a>
         </div>
         <?php endif; ?>
         <?php endif; ?>
@@ -290,12 +289,11 @@ get_header();
           </div>
         </div>
         <?php if($instapay_link2) : ?>
-        <div class="payment-info-item">
-          <span data-en="Pay Link 2:" data-ar="رابط الدفع 2:">Pay Link 2:</span>
-          <div class="copy-wrapper">
-            <input type="text" value="<?php echo esc_attr($instapay_link2); ?>" readonly>
-            <button type="button" class="copy-btn" onclick="magedCopyText(this)"><i class="fas fa-copy"></i></button>
-          </div>
+        <div class="payment-info-item" style="align-items: center;">
+          <span data-en="Direct Pay:" data-ar="الدفع المباشر:">Direct Pay:</span>
+          <a href="<?php echo esc_url($instapay_link2); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 1.2rem; display: inline-flex; align-items: center; gap: 0.5rem;">
+            <i class="fas fa-external-link-alt"></i> <span data-en="Pay Now" data-ar="ادفع الآن">Pay Now</span>
+          </a>
         </div>
         <?php endif; ?>
         <?php endif; ?>
