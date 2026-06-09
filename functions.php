@@ -27,13 +27,13 @@ function maged_portfolio_scripts() {
 	wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css', array(), '6.4.0' );
 	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Poppins:wght@300;400;600;700;800&display=swap', array(), null );
 	wp_enqueue_style( 'aos-css', 'https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css', array(), '2.3.4' );
-	wp_enqueue_style( 'maged-portfolio-style', get_template_directory_uri() . '/assets/css/style.css', array(), time() );
+	wp_enqueue_style( 'maged-portfolio-style', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.1' );
 
 	// JS
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'typed-js', 'https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js', array(), '2.0.12', true );
 	wp_enqueue_script( 'aos-js', 'https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js', array(), '2.3.4', true );
-	wp_enqueue_script( 'maged-portfolio-script', get_template_directory_uri() . '/assets/js/script.js', array('jquery', 'typed-js', 'aos-js'), time(), true );
+	wp_enqueue_script( 'maged-portfolio-script', get_template_directory_uri() . '/assets/js/script.js', array('jquery', 'typed-js', 'aos-js'), '1.0.1', true );
 
 	// Pass dynamic strings to JS for Typed.js
 	$typed_en = get_theme_mod('maged_typed_en', 'PHP Developer, Laravel Developer, Full Stack Developer, Web Developer');
