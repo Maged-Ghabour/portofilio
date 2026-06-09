@@ -7,34 +7,43 @@ get_header();
 
 <!-- PAYMENT -->
 <?php
-  $pay_title_en = get_theme_mod('maged_payment_title_en', 'Payment Details');
-  $pay_title_ar = get_theme_mod('maged_payment_title_ar', 'بيانات الدفع');
-  $pay_sub_en   = get_theme_mod('maged_payment_subtitle_en', 'Choose the suitable payment method and copy details easily.');
-  $pay_sub_ar   = get_theme_mod('maged_payment_subtitle_ar', 'اختر طريقة الدفع المناسبة لك وانسخ البيانات بسهولة.');
+  // Helper function to get ACF field with Theme Mod fallback
+  function get_payment_data($key, $default) {
+      if (function_exists('get_field')) {
+          $val = get_field($key);
+          if (!empty($val)) return $val;
+      }
+      return get_theme_mod($key, $default);
+  }
 
-  $paypal_link  = get_theme_mod('maged_payment_paypal_link', 'https://paypal.me/elwaaa');
-  $paypal_email = get_theme_mod('maged_payment_paypal_email', '3lwaaa+5@gmail.com');
+  $pay_title_en = get_payment_data('maged_payment_title_en', 'Payment Details');
+  $pay_title_ar = get_payment_data('maged_payment_title_ar', 'بيانات الدفع');
+  $pay_sub_en   = get_payment_data('maged_payment_subtitle_en', 'Choose the suitable payment method and copy details easily.');
+  $pay_sub_ar   = get_payment_data('maged_payment_subtitle_ar', 'اختر طريقة الدفع المناسبة لك وانسخ البيانات بسهولة.');
 
-  $stc_name     = get_theme_mod('maged_payment_stc_name', 'Ali Ahmed Abd elrazek Ahmed');
-  $stc_iban     = get_theme_mod('maged_payment_stc_iban', 'EG070002023102310333000113743');
-  $stc_bank     = get_theme_mod('maged_payment_stc_bank', 'Banque Misr');
-  $stc_account  = get_theme_mod('maged_payment_stc_account', '2310333000113743');
-  $stc_purpose  = get_theme_mod('maged_payment_stc_purpose', 'Family Support/Living Expenses');
+  $paypal_link  = get_payment_data('maged_payment_paypal_link', 'https://paypal.me/elwaaa');
+  $paypal_email = get_payment_data('maged_payment_paypal_email', '3lwaaa+5@gmail.com');
 
-  $rajhi_first  = get_theme_mod('maged_payment_rajhi_firstname', 'على');
-  $rajhi_last   = get_theme_mod('maged_payment_rajhi_lastname', 'احمد عبدالرازق احمد');
-  $rajhi_iban   = get_theme_mod('maged_payment_rajhi_iban', 'EG070002023102310333000113743');
-  $rajhi_account= get_theme_mod('maged_payment_rajhi_account', '2310333000113743');
-  $rajhi_swift  = get_theme_mod('maged_payment_rajhi_swift', 'BMISEGCXXXX');
-  $rajhi_bank   = get_theme_mod('maged_payment_rajhi_bank', 'Banque Misr');
-  $rajhi_branch = get_theme_mod('maged_payment_rajhi_branch', '101- All Branches (أو 231 - كفر الشيخ 50)');
-  $rajhi_address= get_theme_mod('maged_payment_rajhi_address', 'مزلقان الانشاء والتعمير, Kafr El-Sheikh');
-  $rajhi_postal = get_theme_mod('maged_payment_rajhi_postal', '33513');
+  $stc_name     = get_payment_data('maged_payment_stc_name', 'Ali Ahmed Abd elrazek Ahmed');
+  $stc_iban     = get_payment_data('maged_payment_stc_iban', 'EG070002023102310333000113743');
+  $stc_bank     = get_payment_data('maged_payment_stc_bank', 'Banque Misr');
+  $stc_account  = get_payment_data('maged_payment_stc_account', '2310333000113743');
+  $stc_purpose  = get_payment_data('maged_payment_stc_purpose', 'Family Support/Living Expenses');
 
-  $int_city     = get_theme_mod('maged_payment_int_city', 'Kafr El-Sheikh');
-  $int_state    = get_theme_mod('maged_payment_int_state', 'Kafr El-Sheikh Governorate');
-  $int_country  = get_theme_mod('maged_payment_int_country', 'Egypt');
-  $int_phone    = get_theme_mod('maged_payment_int_phone', '+20 100 224 1591');
+  $rajhi_first  = get_payment_data('maged_payment_rajhi_firstname', 'على');
+  $rajhi_last   = get_payment_data('maged_payment_rajhi_lastname', 'احمد عبدالرازق احمد');
+  $rajhi_iban   = get_payment_data('maged_payment_rajhi_iban', 'EG070002023102310333000113743');
+  $rajhi_account= get_payment_data('maged_payment_rajhi_account', '2310333000113743');
+  $rajhi_swift  = get_payment_data('maged_payment_rajhi_swift', 'BMISEGCXXXX');
+  $rajhi_bank   = get_payment_data('maged_payment_rajhi_bank', 'Banque Misr');
+  $rajhi_branch = get_payment_data('maged_payment_rajhi_branch', '101- All Branches (أو 231 - كفر الشيخ 50)');
+  $rajhi_address= get_payment_data('maged_payment_rajhi_address', 'مزلقان الانشاء والتعمير, Kafr El-Sheikh');
+  $rajhi_postal = get_payment_data('maged_payment_rajhi_postal', '33513');
+
+  $int_city     = get_payment_data('maged_payment_int_city', 'Kafr El-Sheikh');
+  $int_state    = get_payment_data('maged_payment_int_state', 'Kafr El-Sheikh Governorate');
+  $int_country  = get_payment_data('maged_payment_int_country', 'Egypt');
+  $int_phone    = get_payment_data('maged_payment_int_phone', '+20 100 224 1591');
 ?>
 <section class="payment" id="payment">
   <h1 class="heading" data-aos="fade-up">

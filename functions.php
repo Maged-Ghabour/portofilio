@@ -55,3 +55,9 @@ add_action( 'wp_enqueue_scripts', 'maged_portfolio_scripts' );
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * ACF Fields Registration
+ */
+require get_template_directory() . '/inc/acf-payment.php';
+
